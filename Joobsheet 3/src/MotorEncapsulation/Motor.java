@@ -1,0 +1,50 @@
+package MotorEncapsulation;
+
+class Motor{
+    private int kecepatan = 0;
+    private boolean kontakOn = false;
+
+    public void nyalakanMesin(){
+        kontakOn = true;
+    }
+
+    public void matikanMesin(){
+        kontakOn =false;
+        kecepatan = 0;
+    }
+
+    public void tambahKecepatan(){
+        if (kontakOn == true){
+            kecepatan += 20;
+        }
+        else{
+            System.out.println("Kecepatan tidak bisa bertambah karena mesin Off! \n");
+        }
+        if (kecepatan > 100){
+            System.out.println("kecepatan telah mencapai limit");
+        }
+      
+        
+    }
+
+    public void kurangiKecapatan(){
+        if (kontakOn == true){
+            kecepatan = 5;
+        }
+        else{
+            System.out.println("kecepatan tibak bisa berkurang karena mesin off! \n");
+        }
+    }
+
+    public void printStatus(){
+        if(kontakOn == true){
+            System.out.println("Kontak On");
+
+        }
+        else{
+            System.out.println("Kontak Off");
+        }
+        System.out.println("kecepatan " + kecepatan+ "\n");
+    }
+
+}
